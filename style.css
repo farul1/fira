@@ -1,0 +1,180 @@
+/* General Styles */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+}
+
+/* Header Styles */
+.header {
+    background-color: #d2b48c;
+    color: #000;
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.logo {
+    font-size: 24px;
+}
+
+.navigation ul {
+    list-style-type: none;
+    display: flex;
+}
+
+.navigation li {
+    margin-right: 20px;
+}
+
+.navigation a {
+    text-decoration: none;
+    color: #000;
+    font-weight: bold;
+}
+
+/* Section 1 Styles */
+.section1 {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 50px;
+    height: 800px;
+    width: 1280px;
+}
+
+.text {
+    flex: 1;
+}
+
+.brown-text {
+    color: #8B4513;
+}
+
+.image img {
+    width: 100px; /* Adjust as needed */
+}
+
+.arch-up {
+    /* Add styles for the arch-up image */
+}
+
+/* Section 2 Styles */
+.section2 {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 1280px;
+    height: 800px;
+    width: 1280px;
+}
+
+.brown-bg {
+    background-color: #8B4513;
+
+}
+
+.square {
+    width: 100px;
+    height: 100px;
+    background-color: #fff; /* Adjust as needed */
+}
+
+/* Section 3 Styles */
+.section3 {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 50px;
+    height: 800px;
+    width: 1280px;
+}
+
+.white-bg {
+    background-color: #fff;
+}
+
+.about-text {
+    flex: 1;
+}
+
+/* Section 4 Styles */
+.section4 {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 50px;
+    height: 800px;
+    width: 1280px;
+}
+
+.design-focuses {
+    display: flex;
+    align-items: center;
+}
+
+.circle {
+    width: 50px;
+    height: 50px;
+    background-color: #8B4513; /* Adjust as needed */
+    border-radius: 50%;
+    margin-right: 20px;
+}
+
+/* Section 5 Styles */
+.section5 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 50px;
+    height: 800px;
+    width: 1280px;
+}
+
+.cloud {
+    padding: 20px;
+}
+
+.project-title {
+    color: #8B4513;
+}
+
+.gallery-description {
+    color: #8B4513;
+}
+
+/* Section 6 Styles */
+.section6 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 50px;
+    height: 800px;
+    width: 1280px;
+}
+
+.reach-out-text {
+    color: #fff;
+}
+
+.social-media-icons {
+    display: flex;
+}
+
+/* Add styles for social media icons */
+
+.contact-info {
+    display: flex;
+    align-items: center;
+    margin-top: 20px;
+}
+
+.handle {
+    margin-right: 20px;
+}
+
+/* Add styles for phone and email icons */
+
+/* Footer Styles */
+.footer {
+    /* Add styles for the footer */
+}

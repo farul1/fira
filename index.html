@@ -1,0 +1,707 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Website</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+    <style>
+        #menu-btn {
+            position: fixed;
+            top: 1rem;
+            right: 2rem;
+            height: 3rem;
+            width: 3rem;
+            line-height: 3rem;
+            font-size: 2rem;
+            background: #9b4819;
+            color: #fff;
+            cursor: pointer;
+            text-align: center;
+            z-index: 10000;
+            display: none;
+            border: none;
+          }
+          
+          #menu-btn.fa-times {
+            background: #fff;
+            color: #263238;
+          }
+          
+
+        body {
+            background-color: #f4f1e8;
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            margin: 0 auto;
+        }
+
+        header {
+            background-color: #d69f79;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px;
+            transition: background-color 0.3s ease;
+        }
+        
+        header.scrolled {
+            background-color: #9b4819;
+        }
+        
+
+        
+        header img {
+            max-height: 50px; 
+        }
+
+        nav {
+            display: flex;
+        }
+
+        nav a {
+            color: #8b4513; 
+            margin-left: 5px;
+            margin-right: 100px;
+            text-decoration: none;
+        }
+
+        section {
+            display: flex;
+            justify-content: center; 
+            align-items: center; 
+            padding: 50px;
+            text-align: center; 
+            
+        }
+        section h1 {
+            font-size: 60px;
+        }
+        
+        section p {
+            color: #000000;
+            font-size: 20px;
+
+        }
+        
+        .arch-up {
+            shape-outside: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+            clip-path: polygon(0 0, 100% 0, 100% 80%, 0 100%);
+            max-width: 35%;
+            margin-left: 20px;
+        }
+        
+        .second-section {
+            max-width: 1366px;
+            margin: 0 auto;
+        }
+        
+        .second-section img.img1 {
+            width: 100%;
+            height: auto;
+        }
+        
+
+        .third-section {
+            background-color: #f4f1e8;
+            padding: 50px;
+            color: #000000;
+            display: flex;
+            align-items: center;
+            justify-content: center; 
+            text-align: justify; 
+        }
+        
+        .third-section img {
+            max-width: 55%;
+            height: auto;
+            margin-left: 50px;
+            margin-right: 20px;
+        }
+        
+        .about-section {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 50px;
+            text-align: justify; 
+        }
+
+        .third-section p:nth-child(odd) {
+            font-size: 20px;
+            text-align: justify;
+            color: #000000; 
+        }
+        
+        .third-section p:nth-child(even) {
+            font-size: 20px;
+            text-align: justify;
+            color: #000000;
+        }
+        
+        .third-section h2 {
+            font-size: 54px;
+            text-align: justify; 
+
+        }
+
+        .design-focuses {
+            background-color: #9b4819;
+            padding: 50px;
+            color: #f4f1e8;
+            text-align: center;
+            position: relative; 
+        }
+        
+        
+        .design-focuses h2 {
+            font-size: 46px;
+            margin-bottom: 10px;
+        }
+        
+        .design-focuses img.circle-img {
+            width: 250px;
+            height: 250px;
+            border-radius: 50%;
+            margin: 20px;
+        }
+        
+        .design-focuses p {
+            font-size: 24px;
+            color: #000000;
+        }
+
+        .design-focuses img.df5-img {
+            width: 328px; 
+            height: 384px;
+            object-fit: cover; 
+            position: absolute; 
+            top: 0; 
+            left: 0; 
+        }
+
+        .design-focuses-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .focus-item {
+            text-align: center;
+        }
+        
+        .focus-item img {
+            max-width: 100%; 
+        }
+        
+        @media only screen and (max-width: 991px) {
+            .design-focuses-content {
+                flex-direction: column;
+                align-items: center;
+            }
+        
+            .focus-item {
+                margin-bottom: 20px;
+            }
+        }
+        
+
+        @media only screen and (max-width: 575px) {
+            .focus-item {
+                text-align: left;
+            }
+        }
+
+        .project-gallery {
+            background-color: #f4f1e8;
+            padding: 50px;
+            text-align: center;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+        }
+
+        .gallery-header {
+            text-align: center;
+            margin-bottom: 20px;
+            width: 100%; 
+    
+        }
+        
+
+        .gallery-item {
+            display: inline-block;
+            width: calc(33.33% - 20px); 
+            margin: 10px;
+            box-sizing: border-box;
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: auto;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        .gallery-item p {
+            margin-top: 10px;
+            font-size: 16px;
+        }
+
+        .contact {
+            background-color: #9b4819;
+            padding: 50px;
+            text-align: left;
+            color: #f4f1e8;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+        }
+        
+        .contact-content,
+        .contact-pesan {
+            max-width: 60%;
+            text-align: left;
+            margin-right: 20px;
+            margin-bottom: 20px;
+        }
+
+        .contact-pesan {
+            display: flex;
+            align-items: flex-end; 
+            margin-bottom: 20px;
+        }
+        
+        .contact-pesan img {
+            width: 70px; 
+            height: 70px;
+            margin-right: 15px; 
+        }
+        
+        .contact-info {
+            display: flex;
+            flex-direction: column;
+            text-align: right; 
+            color: #000000;
+        }
+        
+        .contact-info p {
+            margin: 0;
+            font-size: 18px;
+
+        }
+        
+        
+        .social-icons .social-icon {
+            width: 40px;
+            height: 40px;
+            margin-right: 10px;
+            margin-bottom: 10px;
+            margin-top: 5px;
+        }
+        
+        .contact h3 {
+            font-size: 48px;
+            margin: 0;
+            padding: 0;
+            color: #ffffff;
+        }
+        
+        .contact p {
+            font-size: 14px;
+            color: #ffffff;
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .second-section img,
+        .design-focuses img.circle-img,
+        .gallery-item img,
+        .contact-pesan img {
+            animation: fadeInUp 1s ease-out;
+        }
+
+        @keyframes rotate {
+            0% {
+                transform: rotate(0deg);
+            }
+            100% {
+                transform: rotate(360deg);
+            }
+        }
+        
+        .design-focuses img.circle-img,
+        .contact-pesan img {
+            animation: fadeInUp 1s ease-out, rotate 5s linear infinite;
+        }
+
+        #bryanImage.clicked {
+            animation: moveImage 1s ease-out;
+        }
+
+        @keyframes moveImage {
+            0% {
+                transform: translateX(0);
+            }
+            50% {
+                transform: translateX(50px);
+            }
+            100% {
+                transform: translateX(0);
+            }
+        }
+        
+
+        @media only screen and (max-width: 1155px) {
+            #menu-btn {
+                display: block;
+            }
+        
+            nav {
+                display: none;
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                background: rgba(255, 255, 255, 0.15);
+                backdrop-filter: blur(50px);
+                padding: 15px;
+                z-index: 1;
+                text-align: center;
+            }
+        
+            nav.show {
+                display: flex;
+            }
+        
+            nav a {
+                display: block;
+                font-size: 1rem;
+                margin: 1.5rem 0;
+                text-align: center;
+            }
+        }
+
+@media only screen and (max-width: 1155px) {
+        header {
+            padding: 10px;
+        }
+    
+        section h1 {
+            font-size: 36px;
+        }
+    
+        section p {
+            font-size: 16px;
+        }
+    
+        .arch-up {
+            max-width: 100%;
+            margin-left: 0;
+        }
+    
+        .second-section img.img1 {
+            width: 100%;
+        }
+    
+        .third-section img {
+            max-width: 100%;
+            margin-left: 0;
+            margin-right: 0;
+        }
+    
+        .about-section {
+            flex-direction: column;
+            padding: 20px;
+        }
+    
+        .contact-pesan img {
+            width: 40px;
+            height: 40px;
+        }
+    }
+    
+    @media only screen and (max-width: 575px) {
+        header {
+            padding: 10px;
+        }
+    
+        section h1 {
+            font-size: 24px;
+        }
+    
+        section p {
+            font-size: 14px;
+        }
+    
+        .arch-up {
+            max-width: 100%;
+            margin-left: 0;
+        }
+    
+        .second-section img.img1 {
+            width: 100%;
+        }
+    
+        .third-section img {
+            max-width: 100%;
+            margin-left: 0;
+            margin-right: 0;
+        }
+    
+        .about-section {
+            flex-direction: column;
+            padding: 20px;
+        }
+    
+        .contact-pesan img {
+            width: 30px;
+            height: 30px;
+        }
+    }
+
+@media only screen and (max-width: 414px) {
+    hheader {
+        padding: 10px;
+    }
+
+    section h1 {
+        font-size: 36px;
+    }
+
+    section p {
+        font-size: 16px;
+    }
+
+    .arch-up {
+        max-width: 100%;
+        margin-left: 0;
+    }
+
+    .second-section img.img1 {
+        width: 100%;
+    }
+
+    .third-section img {
+        max-width: 100%;
+        margin-left: 0;
+        margin-right: 0;
+    }
+
+    .about-section {
+        flex-direction: column;
+        padding: 20px;
+    }
+
+    .contact-pesan img {
+        width: 40px;
+        height: 40px;
+    }
+}
+
+
+    
+
+    </style>
+</head>
+<body>
+    <div id="menu-btn" class="fas fa-bars"></div>
+    <header>
+        <img src="BA.png" alt="Logo">
+        <div>
+            <nav><b>
+                <a href="#home">HOME</a>
+                <a href="#aboutme">ABOUT ME</a>
+                <a href="#desain">DESAIN FOCUSES</a>
+                <a href="#project">PROJECT GALLERY</a>
+                <a href="#contact">CONTACT</a></b>
+            </nav>
+        </div>
+    </header>
+
+    <section id="home">
+        <div>
+            <h1 style="color: #000;"><strong>HELLO</strong>, <span style="color: #8b4513;">I am Bryan !</span></h1>
+            <p>I believe brevity is key. My print and digital designs</p><p>all about minimalism and elegance.</p>
+        </div>
+        <div class="arch-up">
+            <img src="section1.png" alt="Image">
+        </div>
+    </section>
+
+    <div class="second-section">
+        <img class="img1" src="fira.png" alt="Image 1">
+    </div>
+
+    <div class="third-section">
+        <section id="aboutme">
+            <div>
+            <h2><span style="color: #8b4513;">About Bryan Alexander</span></h2>
+            <p>Recent uni grad. I am passionate about brand design,</p>
+            <p>illustration, and print design. My goal is to make my </p>
+            <p>mark in digital media and tech spaces. I would love to</p>
+            <p>work with people and companies who will give me an</p> 
+            <P>opportunity to flex my sleek and polished style. Reach</p>  
+            <p>out if you think we can create impactful visual art</p>
+            <p>together.</p>
+        </div>
+        <img id="bryanImage" src="section3.png" alt="Bryan Image">
+    </section>        
+    </div>
+
+    <section id="desain" class="design-focuses">
+        <img class="df5-img" src="df5.png" alt="Design Focus 5">
+        <div>
+            <h2>Design Focuses</h2>
+            <div class="design-focuses-content">
+                <div class="focus-item">
+                    <img class="circle-img" src="df1.png" alt="Design Focus 1">
+                    <p>Print</p>
+                    <img src="line.png" alt="Divider Line">
+                    <p>Further elaborate on the skill/offered service.</p>
+                </div>
+    
+                <div class="focus-item">
+                    <img class="circle-img" src="df2.png" alt="Design Focus 2">
+                    <p>Branding</p>
+                    <img src="line.png" alt="Divider Line">
+                    <p>Further elaborate on the skill/offered service.</p>
+                </div>
+    
+                <div class="focus-item">
+                    <img class="circle-img" src="df3.png" alt="Design Focus 3">
+                    <p>Illustration</p>
+                    <img src="line.png" alt="Divider Line">
+                    <p>Further elaborate on the skill/offered service.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+
+    <section id="project" class="project-gallery">
+        <div class="gallery-header">
+            <img src="logogallery.png" alt="Project 1">
+        </div>
+        <!-- First Row -->
+        <div class="gallery-item">
+            <img src="project1.png" alt="Project 1">
+            <p>Viggo Cimmaron - Illustration</p>
+        </div>
+
+        <div class="gallery-item">
+            <img src="project2.png" alt="Project 2">
+            <p>Memento Hotel - Illustration</p>
+        </div>
+
+        <div class="gallery-item">
+            <img src="project3.png" alt="Project 3">
+            <p>Burger Uni - Illustration</p>
+        </div>
+
+        <!-- Second Row -->
+        <div class="gallery-item">
+            <img src="project4.png" alt="Project 4">
+            <p>Crowd Zero - Branding</p>
+        </div>
+
+        <div class="gallery-item">
+            <img src="project5.png" alt="Project 5">
+            <p>Sari Purdue - Branding</p>
+        </div>
+
+        <div class="gallery-item">
+            <img src="project6.png" alt="Project 6">
+            <p>Ernville Co. - Branding</p>
+        </div>
+
+        <!-- Third Row -->
+        <div class="gallery-item">
+            <img src="project7.png" alt="Project 7">
+            <p>Wrya Inc. - Print</p>
+        </div>
+
+        <div class="gallery-item">
+            <img src="project8.png" alt="Project 8">
+            <p>One Pride Group - Print</p>
+        </div>
+
+        <div class="gallery-item">
+            <img src="project9.png" alt="Project 9">
+            <p>Iris Lotus - Print</p>
+        </div>
+    </section>
+
+    <section id="contact" class="contact">
+        <div class="contact-content">
+            <h3>Reach out if you want <br>to create impactful <br>visual art together.</h3>
+            <img src="line.png" alt="Divider Line">
+            <p>To see more of my work, visit my socials: </p>
+            <div class="social-icons">
+                <img src="FB.png" alt="Facebook Icon" class="social-icon">
+                <img src="IG.png" alt="Instagram Icon" class="social-icon">
+                <img src="tw.png" alt="Twitter Icon" class="social-icon">
+                @bryanalex
+
+            </div>
+        </div>
+        <div class="contact-pesan">
+            <img src="pesan.png" alt="Message Icon">
+            <p>EMAIL<br><br>bryanalex@gmail.com</p>
+            
+        </div>
+        <div class="contact-pesan">
+            <img src="pesankontak.png" alt="Contact Message Icon">
+            <p>PHONE<br><br>(123) 456 7890</p>
+        </div>
+    </section>
+
+    <script>
+        let menu = document.querySelector('#menu-btn');
+        let header = document.querySelector('header');
+    
+        menu.onclick = function () {
+            menu.classList.toggle('fa-times');
+            header.classList.toggle('active');
+        };
+    
+        window.onscroll = function () {
+            if (window.scrollY > 0) {
+                header.classList.add('scrolled');
+            } else {
+                header.classList.remove('scrolled');
+            }
+    
+            menu.classList.remove('fa-times');
+            header.classList.remove('active');
+        };
+    
+        document.getElementById('bryanImage').addEventListener('click', function () {
+            this.classList.toggle('clicked');
+        });
+    
+        const menuBtn = document.getElementById('menu-btn');
+        const nav = document.querySelector('nav');
+    
+        menuBtn.addEventListener('click', function () {
+            nav.classList.toggle('show');
+        });
+    </script>
+
+</body>
+</html>
+
